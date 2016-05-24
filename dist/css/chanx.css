@@ -1,0 +1,202 @@
+/*!
+ * CHANX LEARNING CSS
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+ html{overflow:scroll; overflow-style:marquee-line;}
+body{background:#FBFBFB;}
+.navbar-header,
+body
+{
+	 min-width:443px;
+}
+.navbar-default .navbar-toggle{
+	border:none;
+	float:left;
+
+    padding: 10px;
+    margin: 8px 0px 10px 10px;
+}
+
+ .btn
+ {
+    border: 1px solid #d5d5d5;
+    border-radius: 3px;
+ }
+ 
+ .btn-default{
+    background-image: -webkit-linear-gradient(#fcfcfc, #eee);
+    background-image: linear-gradient(#fcfcfc, #eee);}
+ 
+ .btn-danger {
+    color: #fff;
+    background-color: #d9534f !important;
+    border-color: #d43f3a;
+    background-image: -webkit-linear-gradient(#d9534f, #E81619);
+    background-image: linear-gradient(#d9534f, #E81619);
+}
+ .btn-success{
+    background-color: #60b044;
+    background-image: -webkit-linear-gradient(#8add6d, #60b044);
+    background-image: linear-gradient(#8add6d, #60b044);
+    border-color: #5ca941;} 
+ .btn-success:hover{
+	 color: #fff;
+    background-color: #569e3d;
+    background-image: -webkit-linear-gradient(#79d858, #569e3d);
+    background-image: linear-gradient(#79d858, #569e3d);
+    border-color: #4a993e;
+	transition:all 0.5s;
+	 }
+	 
+ul.nav.navbar-top-links.navbar-right {
+    display: inline-block;
+}	 
+#wrapper{
+max-width:980px;
+margin:auto;
+	transition:all 1s;}	 
+.navbar{max-width:980px; margin:auto;}	
+@media only screen and (max-width : 615px)
+{
+	li.menukiri
+	{
+		display:none;
+	}
+	#filter-list{display:none}
+}
+@media only screen and (max-width : 767px)
+{
+	ul.nav.navbar-top-links.navbar-right{
+		display:none !important;	
+	}
+}
+@media only screen and (max-width : 980px)
+{
+	.navbar{max-width:100%;}	
+	#wrapper{
+	padding-left:2%;
+	padding-right:2%;
+	width:100%;
+	transition:all 1s;
+	}
+	#page-wrapper{
+		border-right:none !important;
+	}
+}
+@media only screen and (max-width : 428px)
+{
+#peringatan-layar-kecil
+{
+	display:block !important;
+	background-color:#FF0004;
+	color:#fff;
+	text-align:center;
+	padding:10px 0px;
+}
+}
+#peringatan-layar-kecil
+{
+	display:none;
+}
+#page-wrapper{
+	background:inherit;
+	margin: 0 0 0 0;
+    border-left:0px;
+    border-right: 1px solid #e7e7e7;
+    padding-top: 20px;
+}
+
+/*diambil sediki dari bootrstrap dua*/
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: #0081c2;
+    background-image: linear-gradient(to bottom, #0088cc, #0077b3);
+}
+.menukiri {
+ 	display: inline-block;
+ 	padding:15px 0;
+}
+a:hover{transition:all 0.5s; text-decoration: none; color:#F00;}
+.menukiri > a{font-style: none; padding-right: 10px;}
+
+.panel{box-shadow: 0px 0px 2px #ccc;}
+.panel-default > .panel-heading{
+	background-color: #E8E9EA;
+    border-bottom: 1px solid #e5e5e5;
+    box-shadow: 0px 10px 10px #f5f5f5;
+	background-color: #f5f5f5;
+    border-bottom: 0;
+    border-radius: 3px 3px 0 0;
+}
+.panel-default > .panel-body,
+.panel-default > .panel-footer
+{
+	background:#fff;
+}
+
+.panel-materi{border-color: inherit;}
+.panel-materi-dihapus{opacity: 0.3; color:#000; background:#000;}
+.panel-materi-dihapus.panel-footer{color:#000;}
+.panel-favorit{border-color: #FF1493;}
+.panel-favorit > .panel-heading, .panel-favorit > .panel-footer{background-color: #FF1493; color:#fff;}
+
+.panel-primary .panel-heading > a{color:#fff;}
+
+.panel-primary .panel-heading > a.btn{color: #000;}
+
+#kategori-daftar > a:hover{text-decoration: none; background: #fff; box-shadow: none;  transition:all 0.9s; }
+#kategori-daftar{background-color: #fff; box-shadow:none;}
+#kategori-daftar:hover{box-shadow: 0 5px 12px #ccc; transition:all 0.5s; background:#fff;}
+
+
+
+.panel.panel-materi.panel-default{background:#337AB7; box-shadow: 0px 1px 10px #ccc;}
+.panel.panel-default.panel-materi:hover{background: #F00; border:#f00 solid 1px; color:#f00; transition:all 0.5s;}
+p.footer-materi{margin:0;}
+
+
+
+
+.navbar-default{
+	background-color: #fff;
+    border-bottom: 5px solid #e5e5e5;
+    /* left: 10px; */
+    box-shadow: 0px 1px 20px #e5e5e5;
+    position: relative;}
+
+
+/*tab pencarian*/
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+	border: 1px solid #ddd;
+	border-top:1px solid #ddd;
+	border-bottom:1px solid #ddd;
+	border-left:1px solid #ddd;
+	border-right:1px solid transparent;
+    box-shadow: -1px 1px 1px #ccc;
+}
+
+.nav-tabs>li>a
+{
+	border:1px solid #ddd;
+	z-index: 2;
+	border-radius:0px 0px 0px;
+
+}
+
+.tab-content
+{
+	border-left: 1px solid #ccc;
+    margin-left: -33px;
+    padding: 20px;
+    z-index: 1;
+    box-shadow: -1px 1px 1px #ccc;
+    margin-right: -20px;
+}
+
+/*tab pencarian*/
+
+
+
+.col-sm-7.col-md-10.isi-komen-materi{background:#fff;    border: #ccc 1px solid; padding-bottom:10px;}
