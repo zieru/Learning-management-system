@@ -301,7 +301,7 @@ class input{
 
 
 $engine = new engine();
-$error = new cx_error();
+$cx_error = new cx_error();
 $go = new go();
 $input= new input();
 
