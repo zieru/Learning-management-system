@@ -110,6 +110,9 @@ $forum['balasan_terakhir'] = sprintf(', Terakhir oleh : <a href="%s">%s</a> @%s'
 									$template->parseuser($last_reply['uid'],'displayname'),
 									date('M jS /H:i ', $last_reply['timestamp']));	
 }
+else {
+	$forum['balasan_terakhir'] = NULL;
+	}
 
 									
 	$forum['deskripsi_list'] = sprintf('
