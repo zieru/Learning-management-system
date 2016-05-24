@@ -26,7 +26,7 @@ if ($_GET['act'] == 'baru')
     $manipulasi['judul']       = 'Menambah Materi Baru';
     $manipulasi['tombolkirim'] = 'materibaru';
     $manipulasi['tombolhapus'] = null;
-    $nilai['judul']            = $nilai['kelas'] = $nilai['urutan'] = $nilai['deskripsi'] = NULL;
+    $nilai['judul']            = $nilai['urutan'] = $nilai['deskripsi'] = NULL;
 } //$_GET['act'] == 'baru'
 else
 {
@@ -47,7 +47,6 @@ else
     
     foreach ($datamateri as $recordmateri);
     $nilai['judul']     = $recordmateri['judul'];
-    $nilai['kelas']     = $recordmateri['kelas'];
     $nilai['urutan']    = $recordmateri['urutan'];
     $nilai['deskripsi'] = $recordmateri['deskripsi'];
 
@@ -94,15 +93,6 @@ if ($_GET['act'] == 'edit')
                                 'class' => 'form-control',
                                 'value' => $nilai['judul'],
                                 'label-samping' => 'Judul'));
-
-  echo $input->text2($properti = array(
-                                'form-group' => TRUE,
-                                'name' => 'kelas',
-                                'id' => 'kelas',
-                                'class' => 'form-control',
-                                'value' => $nilai['kelas'],
-                                'label-samping' => 'Kelas'));
-
 
 ?>
         

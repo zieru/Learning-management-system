@@ -63,12 +63,6 @@ if (isset($_POST['materibaru'])) {
 		'kosong' => false,
 		'min-max' => '6-64',
 	));
-	$error .= $template->validasiinput($properti = array(
-		'judul' => 'kelas',
-		'nilai' => $_POST['kelas'],
-		'kosong' => FALSE,
-		'min-max' => '1-6',
-	));
 
 	//cek jika metode upload 1
 
@@ -105,7 +99,6 @@ if (isset($_POST['materibaru'])) {
 		$judul = $db2->quote($_POST['judul']);
 		$kategori = $db2->quote($_POST['kategori']);
 		$deskripsi = $db2->quote($_POST['deskripsi']);
-		$kelas = $db2->quote($_POST['kelas']);
 		$urutan = $db2->quote($_POST['urutan']);
 
     	if($_POST['metode_upload'] == 1)
@@ -144,7 +137,7 @@ if (isset($_POST['materibaru'])) {
 
 		//eksekusi kuery catat dalam database
 		$sql = "INSERT INTO tb_materi
-    (hash,judul,kategori,deskripsi,kelas,urutan,konten,tipe,checksum,waktuupload,ukuranfile,diskusi,embed_sumber,embed_konten,status)    values($hash,$judul,$kategori,$deskripsi,$kelas,$urutan,$konten,$tipe,$checksum,$waktuupload,$ukuran,1,$embed_sumber,$embed_konten,1)";
+    (hash,judul,kategori,deskripsi,urutan,konten,tipe,checksum,waktuupload,ukuranfile,diskusi,embed_sumber,embed_konten,status)    values($hash,$judul,$kategori,$deskripsi,$urutan,$konten,$tipe,$checksum,$waktuupload,$ukuran,1,$embed_sumber,$embed_konten,1)";
 	
     	error_log(print_r($sql,true));
 
@@ -179,12 +172,6 @@ if (isset($_POST['materiedit'])) {
 		'nilai' => $_POST['judul'],
 		'kosong' => FALSE,
 		'min-max' => '6-64',
-	));
-	$error .= $template->validasiinput($properti = array(
-		'judul' => 'kelas',
-		'nilai' => $_POST['kelas'],
-		'kosong' => FALSE,
-		'min-max' => '1-6',
 	));
 	if (empty($error)) {
 
@@ -264,7 +251,6 @@ if (isset($_POST['materiedit'])) {
 								    UPDATE tb_materi SET
 								    `judul` = (:judul),
 								    `deskripsi` = (:deskripsi),
-								    `kelas` = (:kelas),
 								    `urutan` = (:urutan),
 								    `diskusi` = "1"
 								    (:fileyangdiupload)
@@ -272,7 +258,6 @@ if (isset($_POST['materiedit'])) {
 								    ');
 		$editmateri->bindValue(":judul", $_POST['judul']);
 		$editmateri->bindValue(":deskripsi", $_POST['deskripsi']);
-		$editmateri->bindValue(":kelas", $_POST['kelas']);
 		$editmateri->bindValue(":urutan", $_POST['urutan']);
 		$editmateri->bindValue(":hash", $_GET['hash']);
 		if (isset($adayangdiupload)) {
