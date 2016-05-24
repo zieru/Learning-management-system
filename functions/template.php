@@ -5,7 +5,7 @@ class template
 	
     public function validasiinput($properti)
     {
-        $validasiinput = $error = null;
+        $validasiinput = $error = null;               
         // properti validasi input kosong
         if (isset($properti['kosong']))
         {
@@ -13,7 +13,7 @@ class template
             {
                 if ($properti['nilai'] == "" OR strlen($properti['nilai']) > 0 AND strlen(trim($properti['nilai'])) == 0)
                 {
-                    $error[] = sprintf('<i><b>%s</b></i> Kosong atau Tidak Mengandung Karakter Apapun (ev701)', $properti['judul']);
+                    $error[] = sprintf('<i><b>%s</b></i> Kosong dan Tidak Mengandung Karakter Apapun, atau juga dapat disebabkan karena tag html yang dilarang (ev701)', $properti['judul']);
                 } //$properti['nilai'] == "" OR strlen($properti['nilai']) > 0 AND strlen(trim($properti['nilai'])) == 0
             } //$properti['kosong'] == false
             else
@@ -529,7 +529,11 @@ public function daftar_list($data)
         {
             $disable = 'disabled="disable"';
             $msg     = 'Anda Harus Login Untuk dapat memberi komentar';
+            $larangan_input = '';
         } //$izin['kirimkomentarmateri'] == 0
+        else {
+        		$larangan_input = '<small>*beberapa tag HTML dilarang, gunakan markdown sebagai penggantinya</small>';
+        }
         if (!empty($_GET['balaskomentar']))
         {
             // ambil data balas komentar
@@ -559,15 +563,15 @@ public function daftar_list($data)
 
                 <div class="panel-footer">
                   <button class="btn btn-success lainnya" type="submit" name="kirimkomentar" %s>Kirim</button>
-
+						
                   %s
-
+						%s
                 </div>
 
 
             </form>
 
-          </div>', $go->to('proses'), $disable, $balasan_komentar_konten, $disable, $msg);
+          </div>', $go->to('proses'), $disable, $balasan_komentar_konten, $disable, $msg,$larangan_input);
         return $inputkomentar;
     }
     public function komentar($var = null)
@@ -674,7 +678,12 @@ public function daftar_list($data)
         {
             $disable = 'disabled="disable"';
             $msg     = 'Anda Harus Login Untuk dapat memberi komentar';
+            $larangan_input = '';
         } //$izin['kirimkomentardiskusi'] == 0
+        else {
+        	$larangan_input = '<small>*beberapa tag HTML dilarang, gunakan markdown sebagai penggantinya</small>';
+        }
+        
         // deklarasi varibale input diskusi
         $input_judul = $balasan_komentar_konten = $balasan_komentar = $thread_id = $input_name = null;
         if (!empty($diskusi))
@@ -740,7 +749,7 @@ public function daftar_list($data)
                 <div class="lainnya panel-footer" style="display:block;">
 
                   <input class="btn btn-success lainnya" type="submit" name="%s" %s value="Kirim">
-
+					%s
 				  %s
 
                 </div>
@@ -753,7 +762,7 @@ public function daftar_list($data)
             $input_judul, 
             $thread_id, $disable, // disable untuk textarea
             $konten_isi, $input_name, $disable, // disable untuk input
-            $msg);
+            $msg,$larangan_input);
         return $inputdiskusi;
     }
     public function daftarhalaman($nilai, $style = null)

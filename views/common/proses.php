@@ -374,9 +374,7 @@ if (isset($_POST['kirimkomentar'])) {
 		'kosong' => false,
 		'min-max' => '3-4094',
 	));
-	var_dump($isikomentar);
-	var_dump($error);
-	die;
+	
 	if($error == NULL)
 	{
 		$sql = sprintf('INSERT INTO

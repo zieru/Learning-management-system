@@ -21,7 +21,6 @@
 ?>
 
   <div class="row" style="padding-left:10%;padding-right:10%;">
-
     <form action="<?php echo $go->to('proses'); ?>" method="post" id="balas">
 
       <div class="form-group">
