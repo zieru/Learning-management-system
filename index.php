@@ -1,5 +1,5 @@
 <?php
-//test_commit
+
 ob_start();
 session_start();
 define('CHANX',TRUE);
@@ -16,7 +16,6 @@ include 'functions/perizinan.php';
 include 'functions/template.php';
 include 'views/common/head.php';
 include $engine->view('common/menu-tool');
-
 
 function shutdown()
 {
