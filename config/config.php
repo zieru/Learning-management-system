@@ -6,6 +6,7 @@ $url = array (
     "sub" => "/". $subdir."/?",
     "request" => $_SERVER['REQUEST_URI']
 );
+
 $lokasi_folder = dirname(dirname(__FILE__)); //lokasi up dua folder ../config/
 if(strtoupper(PHP_OS) == 'LINUX')
 {
@@ -17,7 +18,7 @@ else
 }
 
 $url_upload = $url['base']. "/learning_uploads/";
-
+$mod_rewrite = TRUE;
 
 $tipefile_yangdiperbolehkan = array("application/pdf","video/mp4","application/vnd.openxmlformats-officedocument.wordprocessingml.document");
 $tipefile_yangdiperbolehkan_tag = array("o_pdf","o_video","o_word");
@@ -123,21 +124,44 @@ class cx_error{
 class go{
 
 	public function to($sub = null,$act = null,$hash = null){
-		if(!empty($sub) AND !empty($act) AND !empty($hash))
-		{
-			$to = sprintf('index.php?sub=%s&act=%s&hash=%s',$sub,$act,$hash);
+	global $mod_rewrite,$url;
+	
+		if($mod_rewrite == FALSE){
+			if(!empty($sub) AND !empty($act) AND !empty($hash))
+			{
+				$to = sprintf('index.php?sub=%s&act=%s&hash=%s',$sub,$act,$hash);
+			}
+			elseif(!empty($sub) AND !empty($act))
+			{
+				$to = sprintf('index.php?sub=%s&act=%s',$sub,$act);
+			}
+			elseif(!empty($sub))
+			{
+				$to = sprintf('index.php?sub=%s',$sub);
+			}
+			else
+			{
+				$to = Null;
+			}
 		}
-		elseif(!empty($sub) AND !empty($act))
-		{
-			$to = sprintf('index.php?sub=%s&act=%s',$sub,$act);
-		}
-		elseif(!empty($sub))
-		{
-			$to = sprintf('index.php?sub=%s',$sub);
-		}
-		else
-		{
-			$to = Null;
+		else {
+			
+			if(!empty($sub) AND !empty($act) AND !empty($hash))
+			{
+				$to = sprintf('%s/%s/%s/%s',$url['url'],$sub,$act,$hash);
+			}
+			elseif(!empty($sub) AND !empty($act))
+			{
+				$to = sprintf('%s/%s/%s',$url['url'],$sub,$act);
+			}
+			elseif(!empty($sub))
+			{
+				$to = sprintf('%s/%s',$url['url'],$sub);
+			}
+			else
+			{
+				$to = Null;
+			}
 		}
 		
 		return $to;

@@ -5,32 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="AHMAD NAZIRUL">
+    <meta name="author" content="Zieru Chan" >
     <title><?php echo $situs['judul']; ?></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="bootstrap/bootstrap-themes.css" type="text/css" rel="stylesheet">        
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo $url['url']?>/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="<?php echo $url['url']?>/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
     <!-- Social Buttons CSS -->
-    <link href="bower_components/bootstrap-social/bootstrap-social.css" rel="stylesheet">
+    <link href="<?php echo $url['url']?>/bower_components/bootstrap-social/bootstrap-social.css" rel="stylesheet">
 
     <!-- Timeline CSS -->
-    <link href="dist/css/timeline.css" rel="stylesheet">
+    <link href="<?php echo $url['url']?>/dist/css/timeline.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="<?php echo $url['url']?>/dist/css/sb-admin-2.css" rel="stylesheet">
 <!-- Custom CSS -->
-    <link href="dist/css/chanx.css" rel="stylesheet">
+    <link href="<?php echo $url['url']?>/dist/css/chanx.css" rel="stylesheet">
     <!-- Morris Charts CSS -->
-    <link href="bower_components/morrisjs/morris.css" rel="stylesheet">
+    <link href="<?php echo $url['url']?>/bower_components/morrisjs/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
- <script src="js/jquery-2.1.4.min.js"></script>
+    <link href="<?php echo $url['url']?>/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+ <script src="<?php echo $url['url']?>/js/jquery-2.1.4.min.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
