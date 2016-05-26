@@ -1,6 +1,11 @@
 <?php 
 include $engine->func('login');
 $sidebar_num = 0;
+
+if($GLOBALS['sidebar'] == FALSE)
+{
+	exit();
+}
 ?>
 
 

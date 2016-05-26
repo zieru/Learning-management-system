@@ -1,9 +1,8 @@
 <?php
-
 ob_start();
 session_start();
 define('CHANX',TRUE);
-include 'config/config.php';
+require_once 'config/config.php';
 $tombol_kembali = NULL;
 if(isset($_SESSION['last_url']) AND !empty($_SESSION['last_url']) AND $url['request'] != "/learning/index.php?")
 {
@@ -37,7 +36,6 @@ if(isset($_GET['bersihkan_log']))
 		    }
 		}
 	}
-	include  'views/common/footer.php';   
 }
 
 register_shutdown_function('shutdown');
@@ -51,6 +49,9 @@ else
 {
 	switch($_GET['sub'])
 	{
+		case NULL:
+		include 'views/common/depan.php';
+		break;
 		case 'test':
 		include $engine->view('common/test');
 		break;
@@ -84,5 +85,6 @@ else
 }
 
 
+include  'views/common/footer.php';   
 $_SESSION['last_url'] = $url['request'];	
 ?>

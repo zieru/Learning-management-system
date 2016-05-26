@@ -1,4 +1,6 @@
 <?php
+$wew = 'wew';
+$sidebar = TRUE;
 $subdir = 'learning';
 $url = array (
 	"base" => "http://" . $_SERVER['HTTP_HOST'], 
@@ -94,27 +96,44 @@ class engine{
 
 class cx_error{
 	public function code($code){
+		$e = '<style>
+#page-wrapper {border-right:none; width:100%;};
+</style>';
+		$GLOBALS['sidebar'] = FALSE;
+                $msg = null;
+                $page_not_found = 'Page not found';
 		switch ($code)
 		{
 			case 'nodata':
-			$e = 'Data yang anda minta tidak tersedia, atau mungkin saja sudah dihapus';
+			$e .= 'Data yang anda minta tidak tersedia, atau mungkin saja sudah dihapus';
 			break;		
 			case 'user_not_found':
-			$e = 'Pengguna tidak terdaftar';
+			$e .= 'Pengguna tidak terdaftar';
 			break;							
 			case 'e404':
-			$e = 'Oops Something Went Wrong, 404';
+			Header("HTTP/1.0 404 Not Found");
+			$e .= '404';
+                        $msg = $page_not_found;
 			break;
 			case '404':
-			$e = 'Oops Something Went Wrong, 404';
+			header("HTTP/1.0 404 Not Found");
+			$e .= '404';
+                        $msg = $page_not_found;
 			break;
 			default:
 			$e = NUll;
 		}
 		
-		$error = sprintf('<div class="container">
-							%s
-						  </div>',$e);
+		$error = sprintf('
+                    
+						<div class="" style="text-align:center; ">	
+                                                <h1 style="font-size:84px;;">%s </h1>
+                                                <h1>%s </h1>
+                                                <h5 class="text-muted">Halaman yang anda minta tidak ditemukan</h5>
+                                                
+                                                
+                                                <h5 class="text-muted small">sebuah catatan kesalahan telah diberikan kepada administrator</h5>
+                                                </div>',$e,$msg);
 
 		return $error;
 	}

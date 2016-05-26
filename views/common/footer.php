@@ -1,7 +1,7 @@
 </div> <!-- page wrapper-->
 
 
-<?php include 'sidebar.php'; ?>
+
     
     <script>
 	var lastScrollTop = 0;
