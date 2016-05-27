@@ -1,51 +1,37 @@
-<br>
-<div class="row">
-<div class="panel panel-default" style="background:#337ab7;">
 <?php
-
-
-
 if(isset($_POST['balastopik']))
-
 {
-
 	$konten = $db->real_escape_string($_POST['konten']);
-
 			$sql = sprintf("INSERT INTO tb_diskusi (fid,uid,tid,tipe,judul,konten,timestamp,publi) VALUES ('%s','%s','%s','%s','%s','%s','%s','%s')",$engine->hashacak(16),$user['uid'] ,$_GET['hash'] , 0, $_POST['judul'], $konten, time(),1);
-
 			$db->query($sql);
-
 			echo "data disimpan: " . $db->affected_rows;
-
 }
-
-
 
 ?>
 
 <?php
-
 	$sql = sprintf("SELECT * FROM tb_diskusi WHERE fid = '%s'",$_GET['hash']);
-
 	$data = $db->query($sql);
-
 	$topik = $data->fetch_assoc();
-
+        
+        if($data->num_rows < 1)
+        {
+            echo $cx_error->code('nodata');
+            exit();
+        }
+        
+        
 	$urutanpost = 1;
-
 	
-
-	
-
 	$sql = sprintf("SELECT * FROM tb_pengguna WHERE uid = '%s'",$topik['uid']);
-
 	$data = $db->query($sql);
 
 	$pengguna = $data->fetch_assoc();
-
 ?>
 
 
+<div class="row">
+<div class="panel panel-default" style="background:#337ab7;">
 
     <header class="panel-heading panel-primary" style="background-color: #E8E9EA;
     border-bottom: 5px solid #e5e5e5;

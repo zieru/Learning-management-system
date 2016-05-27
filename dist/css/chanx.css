@@ -168,26 +168,39 @@ p.footer-materi{margin:0;}
 
 
 /*tab pencarian*/
-.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+#pencarian.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, 
+#pencarian.nav-tabs>li.active>a:hover{
 	border: 1px solid #ddd;
 	border-top:1px solid #ddd;
 	border-bottom:1px solid #ddd;
 	border-left:1px solid #ddd;
 	border-right:1px solid transparent;
-    box-shadow: -1px 1px 1px #ccc;
+                  box-shadow: -1px 1px 1px #ccc;
 }
 
-.nav-tabs>li>a
+#pencarian.nav-tabs>li>a
 {
 	border:1px solid #ddd;
 	z-index: 2;
 	border-radius:0px 0px 0px;
-
 }
 
-.tab-content
+#bagi-materi.nav-tabs>li>a
 {
-	border-left: 1px solid #ccc;
+	border:1px solid #ddd;
+	z-index: 2;
+	border-radius:0px 0px 0px;
+}
+
+#bagi-materi.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, 
+#bagi-materi.nav-tabs>li.active>a:hover{
+	border: 1px solid #ddd;;
+                  box-shadow: none;;
+}
+
+#pencarian_tab.tab-content
+{
+    border-left: 1px solid #ccc;
     margin-left: -33px;
     padding: 20px;
     z-index: 1;

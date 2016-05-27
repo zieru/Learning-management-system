@@ -1,11 +1,8 @@
-<br>
-
-
  <?php 
 if (empty($_GET['hash']))
 {
     echo $cx_error->code('e404');
-    die;
+    exit;
 } //empty($_GET['hash'])
 
 
@@ -33,9 +30,8 @@ $data          = $db->query($sql);
 $jumlah_materi = $data->num_rows;
 if($jumlah_materi == 0)
 {
-    echo $cx_error->code('e404');
     echo $cx_error->code('nodata');
-    die;
+    exit();
 }
 
 
@@ -314,3 +310,46 @@ if($jumlahkomentar >0)
         </div>
       </section>
 </div> <!-- row -->
+
+<?php
+$GLOBALS['sidebar_konten'] = sprintf('<div class="panel panel-red">
+                        <div class="panel-heading">
+                            <i class="fa fa-share-alt"></i> Bagikan Materi 
+                        </div>
+                        <div class="panel-body">
+                            <!-- Nav tabs -->
+                            <ul id="bagi-materi" class="row nav nav-tabs nav-stacked" style="text-align: center; margin-top:-15px;">
+                            
+                                <li class="active" style="display:inline-block; width:48%%;">
+                                    <a href="#sosial" data-toggle="tab" aria-expanded="true"><i class="fa fa-fw  fa-group" style="block"> </i> Sosial</a>
+                                </li>
+                                <li class="" style="display:inline-block; width:48%%">
+                                    <a href="#tautan" data-toggle="tab" aria-expanded="true"><i class="fa fa-fw  fa-link" style="block"> </i> Tautan</a>
+                                </li>
+                            </ul>
+                            <hr class="row" style="border:1px solid #ccc; margin-top:2px; margin-bottom:5px;">
+                            
+
+
+                            <div class="tab-content" style="padding-top:10px;">
+
+                                <div class="tab-pane fade in" id="tautan" style="list-style:none;">
+                                   <input class="form-control" type="text" value= "%s" style="width:100%%;">
+                                   <hr style="margin:5px;" >
+                                   <p class="text-muted small"><i>Copy</i> tautan diatas dengan menggunakan <b>ctrl + a</b> dan <b>ctrl + c</b> untuk menyalin pada <i>clipboard</i> anda</p>
+                                </div>
+
+                                <div class="tab-pane fade active in" id="sosial">
+                                    <a class="btn btn-social-icon btn-google-plus" style="color:#fff"><i class="fa fa-google-plus"></i></a>
+                                    <a class="btn btn-social-icon btn-twitter" style="color:#fff"><i class="fa fa-twitter"></i></a>
+                                    <a class="btn btn-social-icon btn-facebook" style="color:#fff"><i class="fa fa-facebook"></i></a>
+                                    <a class="btn btn-social-icon btn-tumblr" style="color:#fff"><i class="fa fa-tumblr"></i></a>
+                                </div>
+                                
+                            </div>
+                        </div>   
+                           
+                    </div>',
+                    $url['all']);
+    
+?>

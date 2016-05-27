@@ -1,5 +1,6 @@
 </div> <!-- page wrapper-->
 
+<?php include  'views/common/sidebar.php';   ?>
 
 
     
@@ -89,3 +90,6 @@ $(window).scroll(function(event){
     })
 
     </script>
+    
+    
+    

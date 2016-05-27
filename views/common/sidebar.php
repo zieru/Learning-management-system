@@ -2,9 +2,14 @@
 include $engine->func('login');
 $sidebar_num = 0;
 
+if(!isset($GLOBALS['sidebar_konten']))
+{
+    $GLOBALS['sidebar_konten'] = NULL;
+}
+
 if($GLOBALS['sidebar'] == FALSE)
 {
-	exit();
+    exit();
 }
 ?>
 
@@ -41,8 +46,13 @@ if($user['status_INT'] == 99 AND !($lokasi == 'login')){
     </div>
 
 <?php
-$sidebar_num++;
 }
 ?>
 
+      
+<?php
+echo $GLOBALS['sidebar_konten'];
+?>
+      
 
+</div> <!-- end of sidebar -->

@@ -24,7 +24,7 @@
                         <li class="navbar-brand" style="width:300px; display:inline-block; padding-top:9px;">
                         <?php
                         $pencarian['pengaturan'] = TRUE;
-                        echo '<form action="" method="GET" enctype="multiform/data">';
+                        echo '<form action="index.php?" method="GET" enctype="multiform/data">';
                         include $engine->view("pencarian/mesin_pencari");
                         echo '</form>';
                         ?>

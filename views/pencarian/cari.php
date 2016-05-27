@@ -5,7 +5,7 @@
 <div class="panel panel-default">
                         <div class="panel-heading">
                         <h1 style="text-align:center;width:100%;">Pencarian <?php echo $situs['judul'];?></h1>
-                        <form action="" method="GET" enctype="multiform/data">
+                        <form action="index.php?" method="GET" enctype="multiform/data">
                         <?php 
                         if(isset($_GET['keyword']))
                         {
@@ -21,7 +21,7 @@
                         
                         <div class="col-md-3" style="padding-left:0px;">    
                             <!-- Nav tabs -->
-                            <ul class="nav nav-tabs nav-stacked">
+                            <ul id="pencarian" class="nav nav-tabs nav-stacked">
                                 <li class="active" ><a href="#hasil" data-toggle="tab" aria-expanded="true"><i class="fa fa-fw fa-search"></i>Hasil pencarian</a>
                                 </li>
                                 <li class="" ><a href="#pengaturan" data-toggle="tab" aria-expanded="false"><i class="fa fa-fw fa-gear"></i>Pengaturan pencarian</a>
@@ -31,7 +31,7 @@
                         
                         <div class="col-md-9">        
                             <!-- Tab panes -->
-                            <div class="tab-content" style="padding-top:10px;">
+                            <div id="pencarian_tab" class="tab-content" style="padding-top:10px;">
 
                             	<div class="tab-pane fade" id="pengaturan" style="list-style:none;">
                                     <?php include 'pengaturan.php';?>

@@ -3,7 +3,8 @@ $wew = 'wew';
 $sidebar = TRUE;
 $subdir = 'learning';
 $url = array (
-	"base" => "http://" . $_SERVER['HTTP_HOST'], 
+    "all" => "http://" . $_SERVER['HTTP_HOST'] . '/' . $subdir . $_SERVER['REQUEST_URI'], 
+    "base" => "http://" . $_SERVER['HTTP_HOST'], 
     "url" => "http://" . $_SERVER['HTTP_HOST'] . '/' . $subdir,
     "sub" => "/". $subdir."/?",
     "request" => $_SERVER['REQUEST_URI']
@@ -105,7 +106,8 @@ class cx_error{
 		switch ($code)
 		{
 			case 'nodata':
-			$e .= 'Data yang anda minta tidak tersedia, atau mungkin saja sudah dihapus';
+			$e .= '110';
+                        $msg .= 'Record not found';    
 			break;		
 			case 'user_not_found':
 			$e .= 'Pengguna tidak terdaftar';
@@ -132,7 +134,7 @@ class cx_error{
                                                 <h5 class="text-muted">Halaman yang anda minta tidak ditemukan</h5>
                                                 
                                                 
-                                                <h5 class="text-muted small">sebuah catatan kesalahan telah diberikan kepada administrator</h5>
+                                                <h5 class="text-muted small">sebuah catatan kesalahan telah dilaporkan kepada administrator</h5>
                                                 </div>',$e,$msg);
 
 		return $error;
