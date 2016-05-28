@@ -1,4 +1,4 @@
-<br>
+
 <?php
 if(!isset($_GET['hash']))
 {
@@ -71,18 +71,18 @@ else
 
 		if(!empty($materi['hash']))
 		{
-			$konten .= $template->materidaftar($materi);
+                    $konten .= $template->materidaftar($materi);
 		}
 		else
 		{
-			$jumlah_materi--;
+                    $jumlah_materi--;
 		}
 	}
 
 
 		if($jumlah_materi == 0)
 		{
-			$konten .= $cx_error->code('nodata');
+                    $konten .= $cx_error->code('emptyrecord','Tidak ada konten pada kategori yang bisa ditampilkan');
 		}	
 }
 ?>

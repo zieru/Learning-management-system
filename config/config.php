@@ -96,46 +96,68 @@ class engine{
 }
 
 class cx_error{
-	public function code($code){
+	public function code($code,$desc=null){
 		$e = '<style>
 #page-wrapper {border-right:none; width:100%;};
 </style>';
 		$GLOBALS['sidebar'] = FALSE;
                 $msg = null;
                 $page_not_found = 'Page not found';
+                if(empty($desc))
+                {
+                    $desc = 'Halaman yang anda minta tidak ditemukan';
+                }
 		switch ($code)
 		{
-			case 'nodata':
-			$e .= '110';
-                        $msg .= 'Record not found';    
-			break;		
-			case 'user_not_found':
-			$e .= 'Pengguna tidak terdaftar';
-			break;							
-			case 'e404':
-			Header("HTTP/1.0 404 Not Found");
-			$e .= '404';
-                        $msg = $page_not_found;
-			break;
-			case '404':
-			header("HTTP/1.0 404 Not Found");
-			$e .= '404';
-                        $msg = $page_not_found;
-			break;
-			default:
-			$e = NUll;
+                    case 'nodata':
+                    $e .= '110';
+                    $msg .= 'Record not found';    
+                    break;
+                
+                    case 'emptyrecord':
+                    $e .= '120';
+                    $msg .= 'Record empty   ';    
+                    break;                
+                
+                    case 'user_not_found':
+                    $e .= 'Pengguna tidak terdaftar';
+                    break;							
+                
+                    case 'e404':
+                    Header("HTTP/1.0 404 Not Found");
+                    $e .= '404';
+                    $msg = $page_not_found;
+                    break;
+                
+                    case '404':
+                    header("HTTP/1.0 404 Not Found");
+                    $e .= '404';
+                    $msg = $page_not_found;
+                    break;
+                
+                    default:
+                    $e = NUll;
 		}
 		
 		$error = sprintf('
                     
 						<div class="" style="text-align:center; ">	
-                                                <h1 style="font-size:84px;;">%s </h1>
-                                                <h1>%s </h1>
-                                                <h5 class="text-muted">Halaman yang anda minta tidak ditemukan</h5>
+                                                <h1 style="font-size:84px;;">
+                                                %s 
+                                                </h1>
+                                                
+                                                <h1 style="margin-top:-15px;">
+                                                Error %s 
+                                                </h1>
+                                                
+                                                <hr>
+                                                <h5 class="text-muted">
+                                                %s
+                                                </h5>
                                                 
                                                 
-                                                <h5 class="text-muted small">sebuah catatan kesalahan telah dilaporkan kepada administrator</h5>
-                                                </div>',$e,$msg);
+                                                <h5 class="text-muted small" style="margin-top:-5px;"><i>sebuah catatan kesalahan telah dilaporkan kepada administrator</i  ></h5>
+                                                </div>',$e,$msg,$desc);
 
 		return $error;
 	}
