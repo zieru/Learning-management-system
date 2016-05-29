@@ -19,22 +19,22 @@
     <link href="<?php echo $url['url']?>/bower_components/bootstrap-social/bootstrap-social.css" rel="stylesheet">
 
     <!-- Timeline CSS -->
-    <link href="<?php echo $url['url']?>/dist/css/timeline.css" rel="stylesheet">
+    <link href="<?php echo $url['url']?>/assets/css/timeline.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="<?php echo $url['url']?>/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="<?php echo $url['url']?>/assets/css/sb-admin-2.css" rel="stylesheet">
 <!-- Custom CSS -->
-    <link href="<?php echo $url['url']?>/dist/css/chanx.css" rel="stylesheet">
+    <link href="<?php echo $url['url']?>/assets/css/chanx.css" rel="stylesheet">
     <!-- Morris Charts CSS -->
     <link href="<?php echo $url['url']?>/bower_components/morrisjs/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="<?php echo $url['url']?>/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
- <script src="<?php echo $url['url']?>/dist/js/jquery-2.1.4.min.js"></script>
+ <script src="<?php echo $url['url']?>/assets/js/jquery-2.1.4.min.js"></script>
 
 
 <!-- jQuery -->
-    <script src="<?php echo $url['url']?>/dist/js/markdown.js"></script>
+    <script src="<?php echo $url['url']?>/assets/js/markdown.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="<?php echo $url['url']?>/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
@@ -44,11 +44,11 @@
     <!-- Morris Charts JavaScript -->
     <script src="<?php echo $url['url']?>/bower_components/raphael/raphael-min.js"></script>
     <script src="<?php echo $url['url']?>/bower_components/morrisjs/morris.min.js"></script>
-    <script src="<?php echo $url['url']?>/dist/js/morris-data.js"></script>
+    <script src="<?php echo $url['url']?>/assets/js/morris-data.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="<?php echo $url['url']?>/dist/js/sb-admin-2.js"></script>
-     <script src="<?php echo $url['url']?>/dist/js/jquery-2.1.4.min.js"></script>
+    <script src="<?php echo $url['url']?>/assets/js/sb-admin-2.js"></script>
+     <script src="<?php echo $url['url']?>/assets/js/jquery-2.1.4.min.js"></script>
 
 
 

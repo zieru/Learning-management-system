@@ -364,7 +364,7 @@ public function materikategori($materi)
 
         if(empty($materi['icon']))
         {
-            $materi['icon'] = '<img src="img/thumb_kategori.png" width="100%">';
+            $materi['icon'] = '<img src="assets/images/thumb_kategori.png" width="100%">';
         }
 
         $daftarmateri = sprintf('
