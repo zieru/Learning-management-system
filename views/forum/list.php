@@ -63,7 +63,7 @@ if(isset($_POST['filter']))
 }
 else
 {
-	$sql = sprintf('SELECT * FROM tb_diskusi WHERE tipe = 1 %s',$limit);
+	$sql = sprintf('SELECT * FROM tb_diskusi WHERE tipe = 1 ORDER BY timestamp DESC %s',$limit);
 }
 
 $kueri = $db2->query($sql);
@@ -75,7 +75,6 @@ if($jumlah_materi == 0 )
 }
 while($forum = $kueri->fetch())
 {	
-	
 	$sql = sprintf('SELECT * FROM tb_diskusi WHERE tid= "%s" ORDER BY timestamp DESC',$forum['fid']);
 	$kueri_last_reply = $db2->query($sql);
 	$jumlah_reply = $kueri_last_reply->rowCount();
