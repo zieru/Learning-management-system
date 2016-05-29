@@ -223,7 +223,7 @@ class template
     {
         global $go, $template;
         // fungsi penyingkataan judul
-        $maxjudul = 9;
+        $maxjudul = 64;
         if (strlen($materi['judul']) >= $maxjudul)
         {
             $str = substr(strip_tags($materi['judul']), 0, $maxjudul) . ' ...';
@@ -288,13 +288,13 @@ $template->tombol($tombolproperti = array(
             switch($fileextensi)
             {
                 case "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
-                $materi['thumb'] = '<i class="fa fa-4x fa-file-word-o center-block" style="margin: 0 20%;"></i>';    
+                $materi['thumb'] = '<i class="fa fa-4x fa-file-word-o center-block" style="text-align:center;width:100%;"></i>';    
                 break;
                 case "video/mp4" :
-                $materi['thumb'] = '<i class="fa fa-4x fa-youtube-play center-block" style="margin: 0 20%;"></i>';    
+                $materi['thumb'] = '<i class="fa fa-4x fa-youtube-play center-block" style="text-align:center;width:100%;"></i>';    
                 break;  
                 case "application/pdf":
-                $materi['thumb'] = '<i class="fa fa-4x fa-file-pdf-o center-block" style="margin: 0 20%;"></i>';    
+                $materi['thumb'] = '<i class="fa fa-4x fa-file-pdf-o center-block" style="text-align:center;width:100%;"></i>';    
                 break;  
             }
         }
@@ -303,7 +303,7 @@ $template->tombol($tombolproperti = array(
             switch($materi['embed_sumber'])
             {
                 case "1":
-                $materi['thumb'] = '<i class="fa fa-4x fa-youtube-play center-block" style="margin: 0 20%;"></i>';    
+                $materi['thumb'] = '<i class="fa fa-4x fa-youtube-play center-block" style="text-align:center;width:100%;"></i>';    
                 break;  
             }
         }
@@ -327,12 +327,12 @@ $template->tombol($tombolproperti = array(
 	<div class="%s">
     <a href="%s" data-original-title="%s" data-toggle="tooltip" data-placement="top" >
     <div class="panel panel-materi %s ">
-                        <div class="panel-body" style="padding: 20px 0px 20px 18px; background: #fff; height:100px;">
+                        <div class="panel-body" style="padding: 30px 0px;background: #fff;height:100px;max-height:100px;">
                             %s
                         </div>
 
                        <div class="panel-footer judul_materi_panel" style="color:#fff;border-top:solid 2px #ccc;background:transparent; box-shadow: 0px -1px 30px #ccc;">              
-                           <p class="footer-materi"> %s</p>
+                           <p class="footer-materi" style="white-space: nowrap; overflow: hidden;text-overflow: ellipsis;"> %s</p>
                         </div>
 						
 												 
