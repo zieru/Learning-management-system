@@ -7,7 +7,6 @@ $tombol_kembali = NULL;
 if(isset($_SESSION['last_url']) AND !empty($_SESSION['last_url']) AND $url['request'] != "/learning/index.php?")
 {
   $tombol_kembali=  sprintf('<a href="%s"><i title="Kembali" class="fa fa-2x fa-arrow-left"></i></a>',$_SESSION['last_url']);
-	
 }
 
 include 'functions/login.php';
@@ -86,5 +85,5 @@ else
 
 
 include  'views/common/footer.php';   
-$_SESSION['last_url'] = $url['request'];	
+$_SESSION['last_url'] = $url['all'];
 ?>

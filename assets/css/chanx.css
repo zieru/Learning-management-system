@@ -3,7 +3,7 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
- html{overflow:scroll; overflow-style:marquee-line;}
+ html{overflow-y:scroll; overflow-style:marquee-line;}
 body{background:#FBFBFB;}
 .navbar-header,
 body
